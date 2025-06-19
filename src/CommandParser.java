@@ -1,7 +1,7 @@
 public class CommandParser {
 
     // ดึงคำสั่ง เช่น add, update, delete
-    public static String getCommand(String input) {
+    public static String getActionType(String input) {
         return input.split(" ")[0];
     }
 
@@ -11,6 +11,10 @@ public class CommandParser {
             return Integer.parseInt(parts[1]);
         }
         throw new IllegalArgumentException("Invalid ID input");
+    }
+
+    public static String getStatus(String input) {
+        return input.split(" ")[1];
     }
 
     // ดึง description ที่อยู่ในเครื่องหมาย "..."
